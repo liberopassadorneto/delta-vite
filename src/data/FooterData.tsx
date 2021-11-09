@@ -9,23 +9,33 @@ import {
 export const footerSocialData = [
   {
     name: 'Facebook',
-    icon: FaFacebook,
+    icon: <FaFacebook />,
+    size: '1.5rem',
+    color: '#fff',
   },
   {
     name: 'Instagram',
-    icon: FaInstagram,
+    icon: <FaInstagram />,
+    size: '1.5rem',
+    color: '#fff',
   },
   {
     name: 'YouTube',
-    icon: FaYoutube,
+    icon: <FaYoutube />,
+    size: '1.5rem',
+    color: '#fff',
   },
   {
     name: 'Twitter',
-    icon: FaTwitter,
+    icon: <FaTwitter />,
+    size: '1.5rem',
+    color: '#fff',
   },
   {
     name: 'LinkedIn',
-    icon: FaLinkedin,
+    icon: <FaLinkedin />,
+    size: '1.5rem',
+    color: '#fff',
   },
 ];
 

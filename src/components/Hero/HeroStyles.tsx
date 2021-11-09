@@ -6,14 +6,13 @@ export const HeroSection = styled.section`
   background-position: center;
   background-size: cover;
   padding-top: clamp(70px, 25vh, 220px);
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  overflow-x: hidden;
+  box-shadow: inset 0 0 0 1000px rgba (0, 0, 0, 0.2);
 `;
 
 export const HeroVideo = styled.video`
-  object-fit: contain;
-  width: 100vw;
-  height: auto;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
   top: 0;
   position: absolute;
@@ -38,9 +37,9 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const HeroButton = styled(Button)`
-  color: #000;
+  color: black;
 
-  :before {
+  &:before {
     background: #fff;
     height: 500%;
   }
@@ -50,6 +49,6 @@ export const HeroButton = styled(Button)`
   }
 
   &:hover {
-    color: #fff;
+    color: white;
   }
 `;

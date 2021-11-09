@@ -1,7 +1,9 @@
+import { Pricing } from '../components/Pricing';
+
 export function PricingPage() {
   return (
     <>
-      <h1>pricingpage</h1>
+      <Pricing />
     </>
   );
 }

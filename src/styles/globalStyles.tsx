@@ -1,13 +1,20 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { HeadingProps, MainHeadingProps, SectionProps } from './types';
+import {
+  ColumnProps,
+  HeadingProps,
+  MainHeadingProps,
+  RowProps,
+  SectionProps,
+  TextWrapperProps,
+} from './types';
 
 export const GlobalStyle = createGlobalStyle`
-*{
-  box-sizing: border-box;
+  *{
+    box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
-}
+  font-family: 'Montserrat', sans-serif;
+  }
 `;
 
 export const Container = styled.div`
@@ -21,11 +28,10 @@ export const Container = styled.div`
     padding: 0 30px;
   }
 `;
-
 export const MainHeading = styled.h1<MainHeadingProps>`
   font-size: clamp(2.3rem, 6vw, 4.5rem);
   margin-bottom: 2rem;
-  color: ${({ inverse }) => (inverse ? '#403ae3' : '#fff')};
+  color: ${({ inverse }) => (inverse ? '$403ae3' : '#fff')};
   width: 100%;
   letter-spacing: 4px;
   text-align: center;
@@ -36,14 +42,24 @@ export const Heading = styled.h2<HeadingProps>`
   margin: ${({ margin }) => (margin ? margin : '')};
   margin-bottom: ${({ mb }) => (mb ? mb : '')};
   margin-top: ${({ mt }) => (mt ? mt : '')};
-  color: ${({ inverse }) => (inverse ? '#403ae3' : '#fff')};
+  color: ${({ inverse }) => (inverse ? '$403ae3' : '#fff')};
   letter-spacing: 0.4rem;
   line-height: 1.06;
   text-align: center;
   width: ${({ width }) => (width ? width : '100%')};
 `;
 
-export const TextWrapper = styled.span``;
+export const TextWrapper = styled.span<TextWrapperProps>`
+  color: ${({ color }) => (color ? color : '')};
+  font-size: ${({ size }) => (size ? size : '')};
+  font-weight: ${({ weight }) => (weight ? weight : '')};
+  letter-spacing: ${({ spacing }) => (spacing ? spacing : '')};
+  padding: ${({ padding }) => (padding ? padding : '')};
+  margin: ${({ margin }) => (margin ? margin : '')};
+  margin-bottom: ${({ mb }) => (mb ? mb : '')};
+  margin-top: ${({ mt }) => (mt ? mt : '')};
+  text-align: ${({ textAlign }) => (textAlign ? textAlign : '')};
+`;
 
 export const Section = styled.section<SectionProps>`
   padding: ${({ padding }) => (padding ? padding : '140px 0')};
@@ -62,13 +78,43 @@ export const Section = styled.section<SectionProps>`
   }
 `;
 
-export const Row = styled.div``;
+export const Row = styled.div<RowProps>`
+  display: flex;
+  justify-content: ${({ justify }) => (justify ? justify : '')};
+  align-items: ${({ align }) => (align ? align : '')};
+  gap: ${({ gap }) => (gap ? gap : '')};
+  padding: ${({ padding }) => (padding ? padding : '')};
+  margin: ${({ margin }) => (margin ? margin : '')};
+  position: ${({ position }) => (position ? position : '')};
+  width: ${({ width }) => (width ? width : 'auto')};
+  min-width: ${({ minWidth }) => (minWidth ? minWidth : 'auto')};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : 'auto')};
+  height: ${({ height }) => (height ? height : 'auto')};
+  max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : 'auto')};
+  min-height: ${({ minHeight }) => (minHeight ? minHeight : 'auto')};
+  flex-wrap: ${({ wrap }) => (wrap ? wrap : '')};
+`;
 
-export const Column = styled.div``;
+export const Column = styled.div<ColumnProps>`
+  display: flex;
+  flex-direction: column;
+  justify-content: ${({ justify }) => (justify ? justify : '')};
+  align-items: ${({ align }) => (align ? align : '')};
+  gap: ${({ gap }) => (gap ? gap : '')};
+  padding: ${({ padding }) => (padding ? padding : '')};
+  margin: ${({ margin }) => (margin ? margin : '')};
+  position: ${({ position }) => (position ? position : '')};
+  width: ${({ width }) => (width ? width : 'auto')};
+  min-width: ${({ minWidth }) => (minWidth ? minWidth : 'auto')};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : 'auto')};
+  height: ${({ height }) => (height ? height : 'auto')};
+  max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : 'auto')};
+  min-height: ${({ minHeight }) => (minHeight ? minHeight : 'auto')};
+`;
 
 export const Button = styled.button`
   border-radius: 4px;
-  background: transparent;
+  background: none;
   white-space: nowrap;
   padding: 10px 20px;
   font-size: 16px;
@@ -78,14 +124,14 @@ export const Button = styled.button`
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  z-index: 0;
 
   &:before {
-    content: '';
     background: #fff;
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
     transition: all 0.6s ease;
     width: 100%;
@@ -98,6 +144,6 @@ export const Button = styled.button`
   }
 
   &:hover {
-    color: #000;
+    color: black;
   }
 `;

@@ -1,21 +1,21 @@
-export const data = [
+export const carouselData = [
   {
     title: 'What our clients say',
     description:
       'Our clients happily stay with our services for more several years now. See real reviews from our clients.',
-    image: './assets/clients.jpg',
+    image: './assets/images/clients.jpg',
   },
   {
     title: 'Our security ',
     description:
       'Learn more about our security systems to make sure your data is always safe',
-    image: './assets/security.jpg',
+    image: './assets/images/security.jpg',
   },
   {
     title: 'Our Team',
     description:
       'Our team consists of the best experts in the industry, learn about them',
-    image: './assets/teamwork.jpg',
+    image: './assets/images/teamwork.jpg',
   },
   {
     title: 'Our servers',

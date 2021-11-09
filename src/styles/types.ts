@@ -10,6 +10,18 @@ export interface HeadingProps {
   width?: string;
 }
 
+export interface TextWrapperProps {
+  color?: string;
+  size?: string;
+  weight?: string;
+  spacing?: string;
+  padding?: string;
+  margin?: string;
+  mb?: string;
+  mt?: string;
+  textAlign?: string;
+}
+
 export interface SectionProps {
   padding?: string;
   margin?: string;
@@ -23,3 +35,12 @@ export interface SectionProps {
   minHeight?: string;
   smPadding?: string;
 }
+
+export interface RowProps extends SectionProps {
+  justify?: string;
+  align?: string;
+  gap?: string;
+  wrap?: string;
+}
+
+export interface ColumnProps extends RowProps {}
