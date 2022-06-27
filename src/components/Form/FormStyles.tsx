@@ -4,9 +4,10 @@ import {
   FormColumnProps,
   FormImgWrapperProps,
   FormMessageProps,
+  FormSectionProps,
 } from './types';
 
-export const FormSection = styled.div`
+export const FormSection = styled.div<FormSectionProps>`
   /* color: #fff; */
   height: 100vh;
   padding: 160px 0;
